@@ -63,6 +63,11 @@ For detailed documentation, visit [https://pulakatlab.github.io/autoIF/](https:/
 - [API Reference](https://pulakatlab.github.io/autoIF/api/pipeline/)
 - [Mask Validation GUI](https://pulakatlab.github.io/autoIF/tools/mask-validation-gui/)
 
+## Data and Trained Model
+
+- **Dataset and checkpoint** (whole-slide images, 534 labeled ROI images with vessel masks, expert annotations, evaluation outputs, trained Mask R-CNN weights): [doi:10.5281/zenodo.22731150](https://doi.org/10.5281/zenodo.22731150) (CC-BY-4.0)
+- **Trained model weights and model card**: [huggingface.co/abuzarmahmood/autoIF-vessel-maskrcnn](https://huggingface.co/abuzarmahmood/autoIF-vessel-maskrcnn)
+
 ## Project Structure
 
 ```
