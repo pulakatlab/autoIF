@@ -23,7 +23,7 @@ python src/pipeline/annotation/final_annotation.py
 
 ## Integration with Labelbox
 
-AutoSlide can import annotations from Labelbox NDJSON exports:
+autoIF can import annotations from Labelbox NDJSON exports:
 
 1. Export annotations from Labelbox in NDJSON format
 2. Place exports in the annotations directory

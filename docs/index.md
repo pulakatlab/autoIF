@@ -1,8 +1,8 @@
-# 🔬 AutoSlide: AI-Powered Histological Analysis
+# 🔬 autoIF: AI-Powered Histological Analysis
 
 **Unlock the hidden patterns in your histological slides with deep learning**
 
-AutoSlide is a comprehensive pipeline that transforms how researchers analyze histological slides, combining computer vision with deep learning to identify tissues, detect vessels, and quantify fibrosis with unprecedented precision.
+autoIF is a comprehensive pipeline that transforms how researchers analyze histological slides, combining computer vision with deep learning to identify tissues, detect vessels, and quantify fibrosis with unprecedented precision.
 
 ## ✨ Key Features
 
@@ -13,7 +13,7 @@ AutoSlide is a comprehensive pipeline that transforms how researchers analyze hi
 - **Reproducible Workflow** - Ensure consistent results across multiple samples and studies
 - **Comprehensive Data Management** - Track annotations and regions with unique hashing system
 
-## 🚀 The AutoSlide Pipeline
+## 🚀 The autoIF Pipeline
 
 Our end-to-end workflow transforms raw histological slides into actionable insights:
 
@@ -23,7 +23,7 @@ Our end-to-end workflow transforms raw histological slides into actionable insig
 4. **🔬 Vessel Detection** - Deep learning-based identification of vascular structures using pre-trained Mask R-CNN
 5. **📈 Fibrosis Quantification** - Automated measurement of fibrotic tissue using HSV color analysis
 
-## 💡 Why AutoSlide?
+## 💡 Why autoIF?
 
 - **Save Time** - Automate tedious manual annotation and region selection
 - **Increase Accuracy** - Leverage deep learning for consistent, objective analysis
@@ -42,7 +42,7 @@ Our end-to-end workflow transforms raw histological slides into actionable insig
 
 ## 📊 Data Preparation & Model Usage
 
-AutoSlide includes specialized tools for:
+autoIF includes specialized tools for:
 
 - Converting annotations from Labelbox and other labeling tools into analysis-ready formats
 - Creating high-quality binary masks from polygon annotations
@@ -64,4 +64,4 @@ AutoSlide includes specialized tools for:
 - [Pipeline Overview](pipeline/overview.md)
 - [API Reference](api/pipeline.md)
 
-Ready to transform your histological analysis? Get started with AutoSlide today!
+Ready to transform your histological analysis? Get started with autoIF today!

@@ -1,10 +1,10 @@
-site_name: AutoSlide Documentation
+site_name: autoIF Documentation
 site_description: AI-Powered Histological Analysis Pipeline
 site_author: Abuzar Mahmood
-site_url: https://pulakatlab.github.io/autoslide/
+site_url: https://pulakatlab.github.io/autoIF/
 
-repo_name: pulakatlab/autoslide
-repo_url: https://github.com/pulakatlab/autoslide
+repo_name: pulakatlab/autoIF
+repo_url: https://github.com/pulakatlab/autoIF
 edit_uri: edit/main/docs/
 
 theme:
@@ -90,4 +90,4 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/pulakatlab/autoslide
+      link: https://github.com/pulakatlab/autoIF

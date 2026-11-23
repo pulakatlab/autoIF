@@ -24,7 +24,7 @@ No additional dependencies required! The module uses existing dependencies:
 ### Basic Usage
 
 ```python
-from autoslide.pipeline.model.color_correction import ColorCorrector
+from autoif.pipeline.model.color_correction import ColorCorrector
 import cv2
 
 # Initialize with reference image(s) from original dataset
@@ -52,7 +52,7 @@ corrected = corrector.correct_image(img, method='reinhard')
 ### Batch Processing
 
 ```python
-from autoslide.pipeline.model.data_preprocessing import apply_color_correction
+from autoif.pipeline.model.data_preprocessing import apply_color_correction
 
 # Correct all images in a directory
 successful, failed = apply_color_correction(
@@ -72,7 +72,7 @@ print(f"Corrected {successful} images, {failed} failed")
 ### Detecting Color Divergence
 
 ```python
-from autoslide.pipeline.model.color_correction import compute_color_divergence
+from autoif.pipeline.model.color_correction import compute_color_divergence
 import cv2
 
 # Load images from different datasets
@@ -145,7 +145,7 @@ divergence = compute_color_divergence(img1, img2, metric='kl_divergence')
 ### Before Training
 
 ```python
-from autoslide.pipeline.model.data_preprocessing import (
+from autoif.pipeline.model.data_preprocessing import (
     apply_color_correction,
     load_data,
     split_train_val
@@ -176,7 +176,7 @@ train_imgs, train_masks, val_imgs, val_masks = split_train_val(
 ### Quality Control Check
 
 ```python
-from autoslide.pipeline.model.color_correction import compute_color_divergence
+from autoif.pipeline.model.color_correction import compute_color_divergence
 import cv2
 import os
 
@@ -349,4 +349,4 @@ When adding new color correction methods:
 
 ## License
 
-This module is part of the autoslide project and follows the same MIT license.
+This module is part of the autoif project and follows the same MIT license.

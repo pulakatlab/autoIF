@@ -6,7 +6,7 @@
 - **All Dependencies Installed**: ✅
   - Core packages (slideio, torch, torchvision, numpy, pandas, matplotlib, opencv-python, scikit-image, scikit-learn)
   - Dev packages (prefect, gdown, dvc, pytest, pre-commit)
-  - Autoslide package installed in editable mode
+  - autoIF package installed in editable mode
 
 ## Test Data ✅
 
@@ -85,7 +85,7 @@
 - Timing data in tracking JSON
 
 **Notes**: 
-- Uses actual trained Mask R-CNN model from `autoslide/artifacts/best_val_mask_rcnn_model.pth`
+- Uses actual trained Mask R-CNN model from `autoif/artifacts/best_val_mask_rcnn_model.pth`
 - Model tracked via Git LFS (169MB)
 - Produces realistic vessel detection results
 - Processing time: ~4.8 seconds per image on CPU
@@ -123,10 +123,10 @@ python pipeline_testing/prefect_pipeline.py \
     --verbose
 
 # 3. Run prediction
-python autoslide/src/pipeline/model/prediction.py --verbose
+python autoif/src/pipeline/model/prediction.py --verbose
 
 # 4. Calculate fibrosis
-python autoslide/src/fibrosis_calculation/calc_fibrosis.py --verbose
+python autoif/src/fibrosis_calculation/calc_fibrosis.py --verbose
 ```
 
 This will:
@@ -164,12 +164,12 @@ python pipeline_testing/prefect_pipeline.py \
    - Run model training
 
 3. **Trained Model**: After training:
-   - Model file will be saved to `autoslide/src/pipeline/model/artifacts/`
+   - Model file will be saved to `autoif/src/pipeline/model/artifacts/`
    - Prediction step can then run
 
 ## Import Structure ✅
 
-All imports now correctly use `autoslide.src.pipeline` structure:
+All imports now correctly use `autoif.src.pipeline` structure:
 - ✅ Package installed globally
 - ✅ Imports work from any directory
 - ✅ Config file updated to use workspace paths

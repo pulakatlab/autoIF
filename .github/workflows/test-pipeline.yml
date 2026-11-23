@@ -62,13 +62,13 @@ jobs:
     - name: Run prediction
       id: prediction
       run: |
-        python autoslide/src/pipeline/model/prediction.py --verbose
+        python autoif/src/pipeline/model/prediction.py --verbose
       continue-on-error: true
     
     - name: Calculate fibrosis
       id: fibrosis
       run: |
-        python autoslide/src/fibrosis_calculation/calc_fibrosis.py --verbose
+        python autoif/src/fibrosis_calculation/calc_fibrosis.py --verbose
       continue-on-error: true
     
     - name: Generate test summary

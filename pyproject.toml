@@ -3,7 +3,7 @@ requires = ["setuptools>=42", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "autoslide"
+name = "autoif"
 version = "0.1.0"
 description = "AI-Powered Histological Analysis"
 readme = "README.md"
@@ -23,11 +23,11 @@ requires-python = ">=3.8"
 dynamic = ["dependencies", "optional-dependencies"]
 
 [project.urls]
-"Homepage" = "https://github.com/abuzarmahmood/autoslide"
-"Bug Tracker" = "https://github.com/abuzarmahmood/autoslide/issues"
+"Homepage" = "https://github.com/pulakatlab/autoIF"
+"Bug Tracker" = "https://github.com/pulakatlab/autoIF/issues"
 
 [tool.setuptools]
-packages = {find = {where = ["."], include = ["autoslide*"]}}
+packages = {find = {where = ["."], include = ["autoif*"]}}
 
 [tool.setuptools.dynamic]
 dependencies = {file = ["requirements.txt"]}

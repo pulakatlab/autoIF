@@ -1,6 +1,6 @@
 # Pipeline API Reference
 
-API documentation for AutoSlide pipeline modules.
+API documentation for autoIF pipeline modules.
 
 ## Core Pipeline Functions
 
@@ -15,7 +15,7 @@ def run_pipeline(
     config: dict = None
 ) -> dict:
     """
-    Run the complete AutoSlide pipeline.
+    Run the complete autoIF pipeline.
     
     Args:
         data_dir: Path to data directory

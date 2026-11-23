@@ -1,6 +1,6 @@
 # Pipeline Overview
 
-AutoSlide's end-to-end workflow transforms raw histological slides into actionable insights through five main stages.
+autoIF's end-to-end workflow transforms raw histological slides into actionable insights through five main stages.
 
 ## Pipeline Stages
 

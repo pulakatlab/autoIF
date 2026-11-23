@@ -2,7 +2,7 @@
 
 ## test-pipeline.yml
 
-Automated testing workflow for the AutoSlide pipeline.
+Automated testing workflow for the autoIF pipeline.
 
 ### Triggers
 

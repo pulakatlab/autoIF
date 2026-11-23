@@ -19,7 +19,7 @@ This feature allows the neural network to perform predictions on any directory c
 Process all images in a directory:
 
 ```bash
-python -m autoslide.pipeline.model.prediction --dir /path/to/images
+python -m autoif.pipeline.model.prediction --dir /path/to/images
 ```
 
 This will:
@@ -32,7 +32,7 @@ This will:
 Specify a custom output location:
 
 ```bash
-python -m autoslide.pipeline.model.prediction \
+python -m autoif.pipeline.model.prediction \
     --dir /path/to/images \
     --output-dir /path/to/results
 ```
@@ -46,7 +46,7 @@ Predictions will be saved to:
 Generate overlay visualizations for quality control:
 
 ```bash
-python -m autoslide.pipeline.model.prediction \
+python -m autoif.pipeline.model.prediction \
     --dir /path/to/images \
     --save-visualizations
 ```
@@ -58,7 +58,7 @@ This creates overlay images showing predictions on top of original images.
 Use a specific model file:
 
 ```bash
-python -m autoslide.pipeline.model.prediction \
+python -m autoif.pipeline.model.prediction \
     --dir /path/to/images \
     --model-path /path/to/custom_model.pth
 ```
@@ -68,7 +68,7 @@ python -m autoslide.pipeline.model.prediction \
 Process only a subset of images (useful for testing):
 
 ```bash
-python -m autoslide.pipeline.model.prediction \
+python -m autoif.pipeline.model.prediction \
     --dir /path/to/images \
     --max-images 10
 ```
@@ -78,7 +78,7 @@ python -m autoslide.pipeline.model.prediction \
 Get detailed information during processing:
 
 ```bash
-python -m autoslide.pipeline.model.prediction \
+python -m autoif.pipeline.model.prediction \
     --dir /path/to/images \
     --verbose
 ```
@@ -86,7 +86,7 @@ python -m autoslide.pipeline.model.prediction \
 ## Complete Example
 
 ```bash
-python -m autoslide.pipeline.model.prediction \
+python -m autoif.pipeline.model.prediction \
     --dir /data/external_dataset/images \
     --output-dir /data/external_dataset/predictions \
     --model-path artifacts/best_model.pth \
@@ -125,7 +125,7 @@ The following image formats are automatically detected:
 Process images from a collaborator or external source:
 
 ```bash
-python -m autoslide.pipeline.model.prediction \
+python -m autoif.pipeline.model.prediction \
     --dir /data/collaborator_images \
     --output-dir /data/collaborator_results
 ```
@@ -135,7 +135,7 @@ python -m autoslide.pipeline.model.prediction \
 Generate visualizations for a sample of images:
 
 ```bash
-python -m autoslide.pipeline.model.prediction \
+python -m autoif.pipeline.model.prediction \
     --dir /data/validation_set \
     --save-visualizations \
     --max-images 50
@@ -148,7 +148,7 @@ Process multiple directories in a script:
 ```bash
 #!/bin/bash
 for dir in /data/batch_*; do
-    python -m autoslide.pipeline.model.prediction \
+    python -m autoif.pipeline.model.prediction \
         --dir "$dir/images" \
         --output-dir "$dir/predictions"
 done
@@ -160,13 +160,13 @@ Compare different models on the same dataset:
 
 ```bash
 # Model 1
-python -m autoslide.pipeline.model.prediction \
+python -m autoif.pipeline.model.prediction \
     --dir /data/test_set \
     --output-dir /results/model1 \
     --model-path models/model1.pth
 
 # Model 2
-python -m autoslide.pipeline.model.prediction \
+python -m autoif.pipeline.model.prediction \
     --dir /data/test_set \
     --output-dir /results/model2 \
     --model-path models/model2.pth
@@ -179,7 +179,7 @@ Combine with histogram percentile normalization for best results:
 ```bash
 # Step 1: Normalize colors
 python -c "
-from autoslide.pipeline.model.color_normalization import batch_histogram_normalization
+from autoif.pipeline.model.color_normalization import batch_histogram_normalization
 batch_histogram_normalization(
     input_dir='/data/new_dataset/images',
     output_dir='/data/new_dataset/normalized',
@@ -188,7 +188,7 @@ batch_histogram_normalization(
 "
 
 # Step 2: Run predictions on normalized images
-python -m autoslide.pipeline.model.prediction \
+python -m autoif.pipeline.model.prediction \
     --dir /data/new_dataset/normalized \
     --output-dir /data/new_dataset/predictions
 ```
@@ -198,7 +198,7 @@ python -m autoslide.pipeline.model.prediction \
 You can also use the functionality programmatically:
 
 ```python
-from autoslide.pipeline.model.prediction import process_arbitrary_directory
+from autoif.pipeline.model.prediction import process_arbitrary_directory
 
 process_arbitrary_directory(
     input_dir='/path/to/images',
@@ -282,10 +282,10 @@ The script handles various error conditions gracefully:
 **Solution**: Apply color normalization before prediction:
 ```bash
 # Normalize first
-python -c "from autoslide.pipeline.model.color_normalization import batch_histogram_normalization; batch_histogram_normalization('input', 'normalized', 'ref.png')"
+python -c "from autoif.pipeline.model.color_normalization import batch_histogram_normalization; batch_histogram_normalization('input', 'normalized', 'ref.png')"
 
 # Then predict
-python -m autoslide.pipeline.model.prediction --dir normalized
+python -m autoif.pipeline.model.prediction --dir normalized
 ```
 
 ### Issue: Slow processing
@@ -303,7 +303,7 @@ python -m autoslide.pipeline.model.prediction --dir normalized
 
 ```bash
 # Test on 5 images with visualizations
-python -m autoslide.pipeline.model.prediction \
+python -m autoif.pipeline.model.prediction \
     --dir test_images \
     --max-images 5 \
     --save-visualizations \
@@ -314,7 +314,7 @@ python -m autoslide.pipeline.model.prediction \
 
 ```bash
 # Process entire dataset with custom model
-python -m autoslide.pipeline.model.prediction \
+python -m autoif.pipeline.model.prediction \
     --dir /data/production/images \
     --output-dir /data/production/predictions \
     --model-path /models/production_v2.pth
@@ -336,7 +336,7 @@ MODEL="/models/best_model.pth"
 
 for dataset in "${DATASETS[@]}"; do
     echo "Processing $dataset..."
-    python -m autoslide.pipeline.model.prediction \
+    python -m autoif.pipeline.model.prediction \
         --dir "$dataset/images" \
         --output-dir "$dataset/predictions" \
         --model-path "$MODEL" \
@@ -372,4 +372,4 @@ When extending this feature:
 
 ## License
 
-This feature is part of the autoslide project and follows the same MIT license.
+This feature is part of the autoif project and follows the same MIT license.

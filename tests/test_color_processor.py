@@ -16,7 +16,7 @@ import tempfile
 import json
 from pathlib import Path
 from unittest.mock import patch
-from autoslide.utils.color_correction import (
+from autoif.utils.color_correction import (
     ColorProcessor,
     batch_process_directory,
     batch_process_suggested_regions,
@@ -142,7 +142,7 @@ class TestBackupRestore:
     
     def test_backup_images(self, temp_image_dir):
         """Test backing up images."""
-        from autoslide.utils.color_correction.color_processor import backup_images
+        from autoif.utils.color_correction.color_processor import backup_images
         
         with tempfile.TemporaryDirectory() as backup_dir:
             successful, failed = backup_images(
@@ -171,7 +171,7 @@ class TestBackupRestore:
     
     def test_restore_originals(self, temp_image_dir):
         """Test restoring original images from backup."""
-        from autoslide.utils.color_correction.color_processor import backup_images
+        from autoif.utils.color_correction.color_processor import backup_images
         
         with tempfile.TemporaryDirectory() as backup_dir:
             # Create backup
@@ -197,7 +197,7 @@ class TestBackupRestore:
     
     def test_list_backups(self, temp_image_dir):
         """Test listing available backups."""
-        from autoslide.utils.color_correction.color_processor import backup_images
+        from autoif.utils.color_correction.color_processor import backup_images
         
         with tempfile.TemporaryDirectory() as backup_root:
             backup_root = Path(backup_root)
@@ -383,7 +383,7 @@ class TestDirectoryHandling:
                 cv2.imwrite(str(original_dir / f'image_{i}.png'), img)
             
             # Create backup
-            from autoslide.utils.color_correction.color_processor import backup_images
+            from autoif.utils.color_correction.color_processor import backup_images
             backup_dir = tmpdir / 'backup'
             backup_images(original_dir, backup_dir, file_pattern='*.png')
             
@@ -402,11 +402,11 @@ class TestDirectoryHandling:
 
 
 class TestConfigIntegration:
-    """Test suite for autoslide config integration."""
+    """Test suite for autoif config integration."""
     
     @pytest.fixture
     def mock_config(self):
-        """Mock autoslide config."""
+        """Mock autoif config."""
         return {
             'data_dir': '/tmp/test_data',
             'suggested_regions_dir': '/tmp/test_data/suggested_regions'

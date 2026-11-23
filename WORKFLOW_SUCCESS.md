@@ -2,7 +2,7 @@
 
 ## ✅ All Tests Passed!
 
-**Workflow Run**: [#19914552569](https://github.com/pulakatlab/autoslide/actions/runs/19914552569)  
+**Workflow Run**: #19914552569 (run in the pre-rename repository)  
 **Duration**: 6m 13s  
 **Status**: Success  
 
@@ -30,12 +30,12 @@ All pipeline steps completed successfully:
 ## Key Fixes Applied
 
 ### Issue 1: Hardcoded Config Path
-**Problem**: Config used absolute path `/workspaces/autoslide/test_data` which didn't exist in GitHub Actions
+**Problem**: Config used absolute path `/workspaces/autoIF/test_data` which didn't exist in GitHub Actions
 
 **Solution**: 
-- Updated `autoslide/src/__init__.py` to use relative path resolution
+- Updated `autoif/src/__init__.py` to use relative path resolution
 - Changed `config.json` from absolute to relative path (`test_data`)
-- Added support for `AUTOSLIDE_DATA_DIR` environment variable
+- Added support for `AUTOIF_DATA_DIR` environment variable
 - Paths now resolve correctly in any environment
 
 ### Issue 2: Workflow Failure Detection
@@ -56,13 +56,13 @@ All pipeline steps completed successfully:
 
 ## Configuration Changes
 
-### autoslide/src/__init__.py
+### autoif/src/__init__.py
 - Enhanced `load_config()` function
 - Supports relative paths in config.json
 - Resolves paths relative to project root
 - Falls back to sensible defaults
 
-### autoslide/src/config.json
+### autoif/src/config.json
 ```json
 {
     "data_dir": "test_data"

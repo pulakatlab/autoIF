@@ -2,7 +2,7 @@
 
 ## Requirements
 
-AutoSlide requires Python 3.8 or higher and leverages powerful Python libraries for image processing and deep learning.
+autoIF requires Python 3.8 or higher and leverages powerful Python libraries for image processing and deep learning.
 
 ### Core Dependencies
 
@@ -21,8 +21,8 @@ AutoSlide requires Python 3.8 or higher and leverages powerful Python libraries 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/pulakatlab/autoslide.git
-cd autoslide
+git clone https://github.com/pulakatlab/autoIF.git
+cd autoIF
 ```
 
 ### 2. Create a Virtual Environment (Recommended)
@@ -47,7 +47,7 @@ pip install -r requirements-dev.txt
 ### 4. Verify Installation
 
 ```bash
-python -c "import autoslide; print('AutoSlide installed successfully!')"
+python -c "import autoif; print('autoIF installed successfully!')"
 ```
 
 ## Optional: DVC Setup

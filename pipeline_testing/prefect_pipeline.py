@@ -1,7 +1,7 @@
 """
-Prefect pipeline for testing AutoSlide main steps on test data
+Prefect pipeline for testing autoIF main steps on test data
 
-This pipeline runs the main steps of the AutoSlide pipeline:
+This pipeline runs the main steps of the autoIF pipeline:
 1. Initial annotation
 2. Final annotation  
 3. Region suggestion
@@ -30,7 +30,7 @@ sys.path.insert(0, project_root)
 
 def parse_args():
     parser = argparse.ArgumentParser(
-        description='Run AutoSlide pipeline tests on test data')
+        description='Run autoIF pipeline tests on test data')
     parser.add_argument('--test_data', type=str, required=False,
                         help='Path to test SVS file')
     parser.add_argument('--download_test_data', action='store_true',
@@ -140,7 +140,7 @@ def setup_test_environment(test_data_path):
 def run_initial_annotation(test_data_path, fail_fast=True, verbose=False):
     """Run initial annotation step"""
     print("Running initial annotation...")
-    script_name = os.path.join(project_root, 'autoslide', 'src', 'pipeline', 
+    script_name = os.path.join(project_root, 'autoif', 'src', 'pipeline', 
                                'annotation', 'initial_annotation.py')
     
     cmd = ["python", script_name]
@@ -179,7 +179,7 @@ def auto_label_regions(data_dir):
 def run_final_annotation(test_data_path, fail_fast=True, verbose=False):
     """Run final annotation step"""
     print("Running final annotation...")
-    script_name = os.path.join(project_root, 'autoslide', 'src', 'pipeline',
+    script_name = os.path.join(project_root, 'autoif', 'src', 'pipeline',
                                'annotation', 'final_annotation.py')
     
     cmd = ["python", script_name]
@@ -196,7 +196,7 @@ def run_final_annotation(test_data_path, fail_fast=True, verbose=False):
 def run_region_suggestion(test_data_path, fail_fast=True, verbose=False):
     """Run region suggestion step"""
     print("Running region suggestion...")
-    script_name = os.path.join(project_root, 'autoslide', 'src', 'pipeline',
+    script_name = os.path.join(project_root, 'autoif', 'src', 'pipeline',
                                'suggest_regions.py')
     
     cmd = ["python", script_name]
@@ -213,7 +213,7 @@ def run_region_suggestion(test_data_path, fail_fast=True, verbose=False):
 def run_model_training(test_data_path, fail_fast=True, verbose=False):
     """Run model training step"""
     print("Running model training...")
-    script_name = os.path.join(project_root, 'autoslide', 'src', 'pipeline',
+    script_name = os.path.join(project_root, 'autoif', 'src', 'pipeline',
                                'model', 'training.py')
     
     cmd = ["python", script_name]
@@ -230,7 +230,7 @@ def run_model_training(test_data_path, fail_fast=True, verbose=False):
 def run_prediction(test_data_path, fail_fast=True, verbose=False):
     """Run prediction step"""
     print("Running prediction...")
-    script_name = os.path.join(project_root, 'autoslide', 'src', 'pipeline',
+    script_name = os.path.join(project_root, 'autoif', 'src', 'pipeline',
                                'model', 'prediction.py')
     
     cmd = ["python", script_name]
@@ -243,8 +243,8 @@ def run_prediction(test_data_path, fail_fast=True, verbose=False):
     print("Prediction completed")
 
 
-@flow(name="autoslide-test-pipeline", log_prints=True)
-def autoslide_test_pipeline(
+@flow(name="autoif-test-pipeline", log_prints=True)
+def autoif_test_pipeline(
     test_data_path=None,
     download_data=False,
     auto_label=False,
@@ -254,7 +254,7 @@ def autoslide_test_pipeline(
     verbose=False
 ):
     """
-    Main Prefect flow for testing AutoSlide pipeline
+    Main Prefect flow for testing autoIF pipeline
     
     Args:
         test_data_path: Path to test SVS file (optional if download_data=True)
@@ -266,7 +266,7 @@ def autoslide_test_pipeline(
         verbose: Enable verbose output
     """
     print("=" * 60)
-    print("AutoSlide Test Pipeline")
+    print("autoIF Test Pipeline")
     print("=" * 60)
     
     # Download or verify test data
@@ -282,7 +282,7 @@ def autoslide_test_pipeline(
     
     # Determine data directory from config
     import json
-    config_path = os.path.join(project_root, 'autoslide', 'src', 'config.json')
+    config_path = os.path.join(project_root, 'autoif', 'src', 'config.json')
     with open(config_path, 'r') as f:
         config = json.load(f)
     data_dir = config['data_dir']
@@ -309,7 +309,7 @@ def autoslide_test_pipeline(
     run_prediction(verified_path, fail_fast, verbose)
     
     print("=" * 60)
-    print("AutoSlide Test Pipeline Completed Successfully")
+    print("autoIF Test Pipeline Completed Successfully")
     print("=" * 60)
 
 
@@ -325,7 +325,7 @@ def main():
     test_data_path = os.path.abspath(args.test_data) if args.test_data else None
     
     # Run the flow
-    autoslide_test_pipeline(
+    autoif_test_pipeline(
         test_data_path=test_data_path,
         download_data=args.download_test_data,
         auto_label=args.auto_label,

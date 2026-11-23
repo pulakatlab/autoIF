@@ -23,7 +23,7 @@ No additional dependencies required! Uses existing dependencies:
 ### Basic Usage
 
 ```python
-from autoslide.pipeline.model.color_normalization import HistogramPercentileNormalizer
+from autoif.pipeline.model.color_normalization import HistogramPercentileNormalizer
 import cv2
 
 # Initialize with reference image(s)
@@ -63,7 +63,7 @@ normalized = normalizer.normalize_image(img)
 ### Batch Processing
 
 ```python
-from autoslide.pipeline.model.color_normalization import batch_histogram_normalization
+from autoif.pipeline.model.color_normalization import batch_histogram_normalization
 
 # Normalize all images in a directory
 successful, failed = batch_histogram_normalization(
@@ -80,7 +80,7 @@ print(f"Normalized {successful} images, {failed} failed")
 ### Histogram Comparison
 
 ```python
-from autoslide.pipeline.model.color_normalization import compare_histograms
+from autoif.pipeline.model.color_normalization import compare_histograms
 import cv2
 
 # Compare histograms between two images
@@ -164,7 +164,7 @@ normalized = normalizer.normalize_image(scanner_b_img)
 Check if normalization is needed:
 
 ```python
-from autoslide.pipeline.model.color_normalization import compare_histograms
+from autoif.pipeline.model.color_normalization import compare_histograms
 
 ref_img = cv2.imread('reference.png')
 new_img = cv2.imread('new_image.png')
@@ -185,7 +185,7 @@ for channel in ['channel_0', 'channel_1', 'channel_2']:
 ### Before Training
 
 ```python
-from autoslide.pipeline.model.color_normalization import batch_histogram_normalization
+from autoif.pipeline.model.color_normalization import batch_histogram_normalization
 
 # Normalize new dataset before training
 print("Applying histogram percentile normalization...")
@@ -206,7 +206,7 @@ batch_histogram_normalization(
 ### During Prediction
 
 ```python
-from autoslide.pipeline.model.color_normalization import HistogramPercentileNormalizer
+from autoif.pipeline.model.color_normalization import HistogramPercentileNormalizer
 
 # Initialize normalizer with training dataset references
 normalizer = HistogramPercentileNormalizer(
@@ -324,7 +324,7 @@ normalizer = HistogramPercentileNormalizer(
 
 ## Comparison with Reinhard Method
 
-Both methods are available in the autoslide package:
+Both methods are available in the autoif package:
 
 **Histogram Percentile** (this module):
 - Simpler, faster
@@ -366,4 +366,4 @@ When adding new normalization methods:
 
 ## License
 
-This module is part of the autoslide project and follows the same MIT license.
+This module is part of the autoif project and follows the same MIT license.

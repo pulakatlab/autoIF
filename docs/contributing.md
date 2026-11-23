@@ -1,11 +1,11 @@
 # Contributing
 
-We welcome contributions to AutoSlide! This document provides guidelines for contributing to the project.
+We welcome contributions to autoIF! This document provides guidelines for contributing to the project.
 
 ## Getting Started
 
 1. Fork the repository
-2. Clone your fork: `git clone https://github.com/your-username/autoslide.git`
+2. Clone your fork: `git clone https://github.com/your-username/autoIF.git`
 3. Create a branch: `git checkout -b feature/your-feature-name`
 4. Make your changes
 5. Run tests: `pytest tests/`
@@ -42,13 +42,13 @@ We follow PEP 8 style guidelines with some modifications:
 Format code with Black:
 
 ```bash
-black autoslide/
+black autoif/
 ```
 
 Sort imports with isort:
 
 ```bash
-isort autoslide/
+isort autoif/
 ```
 
 ### Linting
@@ -56,7 +56,7 @@ isort autoslide/
 Run flake8:
 
 ```bash
-flake8 autoslide/
+flake8 autoif/
 ```
 
 ## Testing
@@ -71,7 +71,7 @@ pytest tests/
 pytest tests/test_pipeline.py
 
 # Run with coverage
-pytest --cov=autoslide tests/
+pytest --cov=autoif tests/
 ```
 
 ## Pre-commit Hooks
@@ -112,7 +112,7 @@ mkdocs serve
 
 When reporting bugs, include:
 
-- AutoSlide version
+- autoIF version
 - Python version
 - Operating system
 - Steps to reproduce
@@ -141,4 +141,4 @@ For feature requests, describe:
 - Check existing issues and documentation first
 - Provide context and examples
 
-Thank you for contributing to AutoSlide!
+Thank you for contributing to autoIF!

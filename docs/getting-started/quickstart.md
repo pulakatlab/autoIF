@@ -1,6 +1,6 @@
 # Quick Start
 
-Get up and running with AutoSlide in minutes.
+Get up and running with autoIF in minutes.
 
 ## Running the Complete Pipeline
 
@@ -80,7 +80,7 @@ python src/fibrosis_calculation/calc_fibrosis.py --hue-value 0.6785 --hue-width 
 
 ## Expected Output
 
-AutoSlide generates comprehensive outputs including:
+autoIF generates comprehensive outputs including:
 
 - **Annotated slide visualizations** with tissue boundaries and labels
 - **Region selection maps** showing extracted analysis areas

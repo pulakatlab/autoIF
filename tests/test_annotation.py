@@ -14,7 +14,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 
 # Import the modules we're testing
-from autoslide.src.pipeline.annotation import initial_annotation, final_annotation, get_section_details
+from autoif.src.pipeline.annotation import initial_annotation, final_annotation, get_section_details
 
 
 @pytest.fixture
@@ -103,9 +103,9 @@ def sample_tracking_json(temp_dirs):
 class TestInitialAnnotation:
     """Tests for initial_annotation.py"""
 
-    @patch('autoslide.pipeline.annotation.initial_annotation.slideio.open_slide')
-    @patch('autoslide.pipeline.annotation.initial_annotation.get_threshold_mask')
-    @patch('autoslide.pipeline.annotation.initial_annotation.config')
+    @patch('autoif.pipeline.annotation.initial_annotation.slideio.open_slide')
+    @patch('autoif.pipeline.annotation.initial_annotation.get_threshold_mask')
+    @patch('autoif.pipeline.annotation.initial_annotation.config')
     def test_initial_annotation_workflow(self, mock_config, mock_get_threshold_mask,
                                          mock_open_slide, temp_dirs, mock_slide_scene):
         """Test the main workflow of initial annotation"""
@@ -126,7 +126,7 @@ class TestInitialAnnotation:
             f.write('dummy')
 
         # Mock glob to return our test file
-        with patch('autoslide.pipeline.annotation.initial_annotation.glob') as mock_glob:
+        with patch('autoif.pipeline.annotation.initial_annotation.glob') as mock_glob:
             mock_glob.return_value = [test_svs_path]
 
             # Import and run the script logic
@@ -180,8 +180,8 @@ class TestFinalAnnotation:
         np.testing.assert_array_equal(
             sorted(unique_values), sorted(expected_values))
 
-    @patch('autoslide.pipeline.annotation.final_annotation.plt.savefig')
-    @patch('autoslide.pipeline.annotation.final_annotation.plt.close')
+    @patch('autoif.pipeline.annotation.final_annotation.plt.savefig')
+    @patch('autoif.pipeline.annotation.final_annotation.plt.close')
     def test_visualization_creation(self, mock_close, mock_savefig, sample_mask, sample_metadata_df):
         """Test that visualization is created without errors"""
         from skimage.color import label2rgb
@@ -204,8 +204,8 @@ class TestFinalAnnotation:
 
         assert mock_close.called or True  # Ensure test passes
 
-    @patch('autoslide.pipeline.annotation.final_annotation.config')
-    @patch('autoslide.pipeline.annotation.final_annotation.glob')
+    @patch('autoif.pipeline.annotation.final_annotation.config')
+    @patch('autoif.pipeline.annotation.final_annotation.glob')
     def test_json_processing(self, mock_glob, mock_config, temp_dirs, sample_tracking_json):
         """Test processing of tracking JSON files"""
         json_path, json_data = sample_tracking_json
@@ -231,8 +231,8 @@ class TestFinalAnnotation:
 class TestGetSectionDetails:
     """Tests for get_section_details.py"""
 
-    @patch('autoslide.pipeline.annotation.get_section_details.slideio.open_slide')
-    @patch('autoslide.pipeline.annotation.get_section_details.config')
+    @patch('autoif.pipeline.annotation.get_section_details.slideio.open_slide')
+    @patch('autoif.pipeline.annotation.get_section_details.config')
     def test_section_metadata_loading(self, mock_config, mock_open_slide, temp_dirs, mock_slide_scene):
         """Test loading and processing of section metadata"""
         mock_config.__getitem__.side_effect = lambda key: {
@@ -265,7 +265,7 @@ class TestGetSectionDetails:
             f.write('dummy')
 
         # Test metadata loading logic
-        with patch('autoslide.pipeline.annotation.get_section_details.glob') as mock_glob:
+        with patch('autoif.pipeline.annotation.get_section_details.glob') as mock_glob:
             mock_glob.side_effect = lambda pattern: {
                 os.path.join(temp_dirs['data_dir'], '*TRI*.svs'): [test_svs_path],
                 os.path.join(temp_dirs['data_dir'], 'suggested_regions', '**', '*TRI*.csv'): [test_csv_path]
@@ -287,7 +287,7 @@ class TestGetSectionDetails:
         assert len(bounds) == 4
         assert all(isinstance(x, int) for x in bounds)
 
-    @patch('autoslide.pipeline.annotation.get_section_details.plt.imread')
+    @patch('autoif.pipeline.annotation.get_section_details.plt.imread')
     def test_image_comparison(self, mock_imread):
         """Test image comparison functionality"""
         # Mock image data

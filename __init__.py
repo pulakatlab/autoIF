@@ -1,3 +1,3 @@
 """
-AutoSlide package for automated histopathology slide analysis.
+autoIF package for automated histopathology slide analysis.
 """

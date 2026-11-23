@@ -1,6 +1,6 @@
 # Utils API Reference
 
-API documentation for AutoSlide utility functions.
+API documentation for autoIF utility functions.
 
 ## Image Processing
 

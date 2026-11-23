@@ -76,7 +76,7 @@ def main():
     # Default output path
     output_path = os.path.join(
         project_root, 
-        'autoslide', 
+        'autoif', 
         'src', 
         'pipeline', 
         'model', 

@@ -1,6 +1,6 @@
 # License
 
-AutoSlide is released under the MIT License.
+autoIF is released under the MIT License.
 
 ## MIT License
 
@@ -26,7 +26,7 @@ SOFTWARE.
 
 ## Third-Party Licenses
 
-AutoSlide uses several open-source libraries, each with their own licenses:
+autoIF uses several open-source libraries, each with their own licenses:
 
 - **PyTorch** - BSD-style license
 - **torchvision** - BSD license

@@ -1,6 +1,6 @@
 # Configuration
 
-AutoSlide uses a simple JSON configuration file to manage pipeline settings.
+autoIF uses a simple JSON configuration file to manage pipeline settings.
 
 ## Configuration File
 
@@ -75,8 +75,8 @@ python src/fibrosis_calculation/calc_fibrosis.py \
 Set environment variables for additional configuration:
 
 ```bash
-export AUTOSLIDE_DATA_DIR=/path/to/data
-export AUTOSLIDE_MODEL_PATH=/path/to/model.pth
+export AUTOIF_DATA_DIR=/path/to/data
+export AUTOIF_MODEL_PATH=/path/to/model.pth
 export CUDA_VISIBLE_DEVICES=0  # GPU selection
 ```
 

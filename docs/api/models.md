@@ -1,6 +1,6 @@
 # Models API Reference
 
-API documentation for AutoSlide model training and inference modules.
+API documentation for autoIF model training and inference modules.
 
 ## Model Architecture
 

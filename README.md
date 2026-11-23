@@ -1,8 +1,8 @@
-# 🔬 AutoSlide: AI-Powered Histological Analysis
+# 🔬 autoIF: AI-Powered Histological Analysis
 
-AutoSlide is a comprehensive pipeline that transforms how researchers analyze histological slides, combining computer vision with deep learning to identify tissues, detect vessels, and quantify fibrosis.
+autoIF is a comprehensive pipeline that transforms how researchers analyze histological slides, combining computer vision with deep learning to identify tissues, detect vessels, and quantify fibrosis.
 
-[![Documentation](https://img.shields.io/badge/docs-mkdocs-blue)](https://pulakatlab.github.io/autoslide/)
+[![Documentation](https://img.shields.io/badge/docs-mkdocs-blue)](https://pulakatlab.github.io/autoIF/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Features
@@ -18,8 +18,8 @@ AutoSlide is a comprehensive pipeline that transforms how researchers analyze hi
 ### Installation
 
 ```bash
-git clone https://github.com/pulakatlab/autoslide.git
-cd autoslide
+git clone https://github.com/pulakatlab/autoIF.git
+cd autoIF
 pip install -r requirements.txt
 ```
 
@@ -55,18 +55,18 @@ python src/pipeline/run_pipeline.py
 
 ## Documentation
 
-For detailed documentation, visit [https://pulakatlab.github.io/autoslide/](https://pulakatlab.github.io/autoslide/)
+For detailed documentation, visit [https://pulakatlab.github.io/autoIF/](https://pulakatlab.github.io/autoIF/)
 
-- [Installation Guide](https://pulakatlab.github.io/autoslide/getting-started/installation/)
-- [Quick Start Tutorial](https://pulakatlab.github.io/autoslide/getting-started/quickstart/)
-- [Pipeline Overview](https://pulakatlab.github.io/autoslide/pipeline/overview/)
-- [API Reference](https://pulakatlab.github.io/autoslide/api/pipeline/)
-- [Mask Validation GUI](https://pulakatlab.github.io/autoslide/tools/mask-validation-gui/)
+- [Installation Guide](https://pulakatlab.github.io/autoIF/getting-started/installation/)
+- [Quick Start Tutorial](https://pulakatlab.github.io/autoIF/getting-started/quickstart/)
+- [Pipeline Overview](https://pulakatlab.github.io/autoIF/pipeline/overview/)
+- [API Reference](https://pulakatlab.github.io/autoIF/api/pipeline/)
+- [Mask Validation GUI](https://pulakatlab.github.io/autoIF/tools/mask-validation-gui/)
 
 ## Project Structure
 
 ```
-autoslide/
+autoif/
 ├── src/
 │   ├── pipeline/           # Main pipeline modules
 │   ├── utils/             # Utilities and GUI tools
@@ -78,7 +78,7 @@ autoslide/
 
 ## Contributing
 
-Contributions are welcome! See our [Contributing Guide](https://pulakatlab.github.io/autoslide/contributing/) for details.
+Contributions are welcome! See our [Contributing Guide](https://pulakatlab.github.io/autoIF/contributing/) for details.
 
 ## License
 

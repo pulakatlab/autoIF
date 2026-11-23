@@ -1,10 +1,10 @@
-# AutoSlide Pipeline Testing
+# autoIF Pipeline Testing
 
-This directory contains testing infrastructure for the AutoSlide pipeline using Prefect.
+This directory contains testing infrastructure for the autoIF pipeline using Prefect.
 
 ## Overview
 
-The Prefect test pipeline (`prefect_pipeline.py`) orchestrates the main steps of the AutoSlide pipeline on test data:
+The Prefect test pipeline (`prefect_pipeline.py`) orchestrates the main steps of the autoIF pipeline on test data:
 
 1. **Initial Annotation** - Preliminary tissue delineation
 2. **Final Annotation** - Tissue labeling and segmentation
@@ -25,7 +25,7 @@ git lfs install
 git lfs pull
 ```
 
-This will download the trained models (~338MB total) from `autoslide/artifacts/`.
+This will download the trained models (~338MB total) from `autoif/artifacts/`.
 
 ## Usage
 
